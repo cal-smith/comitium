@@ -9,7 +9,7 @@ require 'securerandom'
 #split things up a bit, move admin stuff to /admin, category stuff to /category, etc?
 
 if ENV['OPENSHIFT_POSTGRESQL_DB_HOST']
-	db = PGconn.connect(ENV['OPENSHIFT_POSTGRESQL_DB_HOST'], ENV['OPENSHIFT_POSTGRESQL_DB_PORT'], "", "", "forum2")	
+	db = PGconn.connect(ENV['OPENSHIFT_POSTGRESQL_DB_HOST'], ENV['OPENSHIFT_POSTGRESQL_DB_PORT'], "", "", "forum")	
 else
 	db = PGconn.connect("localhost", "5432", "", "", "forum")
 end
