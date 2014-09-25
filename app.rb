@@ -45,7 +45,7 @@ db.exec("CREATE TABLE IF NOT EXISTS users(
 		created DATE,
 		ups BIGINT,
 		downs BIGINT,
-		mode INT,
+		mode INT
 	)")
 
 db.exec("CREATE TABLE IF NOT EXISTS settings(
