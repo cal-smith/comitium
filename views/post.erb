@@ -1,0 +1,31 @@
+<div class="contain">
+	<div class="op">
+		<h3><%= op[0][3] %></h3>
+		<div class="post">
+			<div class="user">
+				<%= op[0][5] %>
+			</div>
+			<p><%= op[0][4] %></p>
+		</div>
+	</div>
+	<% if listing == [] %>
+		<div>Nothing yet :(</div>
+	<% else %>
+		<% for reply in listing %>
+			<div class="reply post">
+				<div class="user">
+					<%= reply[3] %>
+				</div>
+				<p><%= reply[2] %></p>
+			</div>
+		<% end %>
+	<% end %>
+	<div>
+		<form class="post-form">
+			<textarea placeholder="Reply?"></textarea>
+			<button>Reply?</button>
+		</form>
+	</div>
+	op<%= op%>
+	listing<%= listing%>
+</div>

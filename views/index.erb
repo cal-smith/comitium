@@ -1,0 +1,13 @@
+<div class="contain">
+	<h1>Categories:</h1>
+	<% if listing == [] %>
+		<p><%= ["Awww...", "*dust*"][Random.new.rand(2)]%></p>
+	<% else %>
+		<% for category in listing %>
+			<div class="listing">
+				<h2><a class="link" href="/<%= category[0] %>/"><%= category[0] %></a></h2>
+				<p class="excerpt"><%= category[1] %></p>
+			</div>
+		<% end %>
+	<% end %>
+</div>

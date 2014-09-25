@@ -1,0 +1,24 @@
+<div class="contain">
+	<h1>Posts in: <%= category.split(/ |\_/).map(&:capitalize).join(" ") %></h1>
+	<p>About: <%= about %></p>
+	<div class="new">
+		<p onclick="toggle()" class="compose">Compose a New Post:</p>
+		<form id="new-post" class="post-form" style="display:none;">
+			<input type="text" placeholder="Title">
+			<textarea placeholder="Body"></textarea>
+			<button>Post!</button>
+		</form>
+	</div>
+	<% if listing == [] %>
+		<div>
+			<h2>Nothing Here :( </h2>
+		</div>
+	<% else %>
+		<% for posts in listing %>
+			<div class="listing">
+				<h2><a class="link" href="/<%= posts[1] %>/<%= posts[0] %>/"><%= posts[3] %></a></h2>
+				<p class="excerpt"><%= posts[4] %></p>
+			</div>
+		<% end %>
+	<% end %>
+</div>

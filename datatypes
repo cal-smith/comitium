@@ -1,0 +1,45 @@
+c1 => normal category
+t1 => top level post
+t2 => reply to a post
+
+post methods:
+
+submit a post to a category
+/:category?title=title&md=raw markdown
+
+reply to a post in a category
+/:category/:post?md=raw markdown
+
+edit things
+/edit?id=either reply or post id&title=title&md=raw markdown
+
+/vote?type=[1, 0, -1]&user=either user id or username that we can lookup
+
+
+get methods:
+
+/
+
+/:category?page=0
+
+/:category/:post?page=0
+
+/:category/:post/:single_post
+
+
+Admin post methods
+
+/admin/ban?
+
+/admin/ipban?
+
+/admin/create?
+
+Admin get methods
+
+/admin/
+
+/admin/users
+
+/admin/bans
+

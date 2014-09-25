@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Really Awesome Forums</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<body>
+	<div class="header">
+		<a href="/" class="site">Really Awesome Forums</a>
+		<% if category %>
+			<a href="/<%= category %>" class="link">Category: <%= category %></a>
+		<% end %>
+	</div>
+	<%= yield %>
+	<script type="text/javascript" src="/app.js"></script>
+</body>
+</html>
