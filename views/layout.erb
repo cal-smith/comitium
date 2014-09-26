@@ -5,10 +5,11 @@
 </head>
 <body>
 	<div class="header">
-		<a href="/" class="site">Really Awesome Forums</a>
+		<a href="/" class="link">Really Awesome Forums</a>
 		<% if category %>
 			<a href="/<%= category %>" class="link">Category: <%= category %></a>
 		<% end %>
+		<a href="/login" class="link pull-right">Log in / Register</a>
 	</div>
 	<%= yield %>
 	<script type="text/javascript" src="/app.js"></script>
