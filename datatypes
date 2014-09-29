@@ -1,3 +1,8 @@
+design goals: dont be afraid to refresh or redirect, thats why its a browser feature.
+limit as much of the js as possible to the post veiw
+be modular
+de-couple as much of the view from the app as possible, use server templates to stick in some json and go from there
+
 c1 => normal category
 t1 => top level post
 t2 => reply to a post
@@ -42,4 +47,9 @@ Admin get methods
 /admin/users
 
 /admin/bans
+
+?\/
+things
+title                 | id | reply                   | md | html | date | user    | category
+only req for new post        thing relation(0 or id)                      user id   where to put it
 

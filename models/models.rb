@@ -56,7 +56,7 @@ class Posts < DB
 			puts e
 			return "error"
 		end
-		return true
+		return posid
 	end
 
 	def self.reply userid, postid, md, html
@@ -69,7 +69,7 @@ class Posts < DB
 			puts e
 			return "error"
 		end
-		return true
+		return replyid
 	end
 end
 

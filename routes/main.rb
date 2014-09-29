@@ -35,17 +35,17 @@ class Forum < Sinatra::Application
 	end
 
 	post '/:category/?' do #submit a new post to category.
+		#check rate limit
 		title = URI.decode(params[:title])
 		category = params[:category]
 		userid = session[:uid]
 		md = URI.decode(params[:md])
 		html = #parse md to html
-		Posts.add category, userid, title, md, html
-		#if no errors, and not rate-limited
-		#redirect to the new post
-		'{"status": "success"}'
-		#else
-		#'{"status": "try again in a few moments"}'
+		result = Posts.add category, userid, title, md, html
+		unless result == "error"
+			redirect to "/#{category}/#{result}"
+		else
+			'{"status": "try again in a few moments"}'
 	end
 
 	post '/:category/:post/?' do #reply to a post. takes the post to reply to and the response body
@@ -53,8 +53,12 @@ class Forum < Sinatra::Application
 		postid = params[:post]
 		md = URI.decode(params[:md])
 		html  =
-		Posts.reply userid, postid, md, html
-		'{"status": "success"}'
+		result = Posts.reply userid, postid, md, html
+		unless result = "error"
+			'{"status": "success"}'
+		else
+			'{"status": "try again in a few moments"}'
+		end
 		#return success so the the js on page knows everything is okay
 		#but of course, db issues are unlikely, so insert the reply beforhand
 	end
